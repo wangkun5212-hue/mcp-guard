@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-guard"
+version = "0.1.0"
+description = "Lightweight production security guardrails for MCP (Model Context Protocol) servers: multi-tenant auth, per-tool rate limiting, data redaction, and audit logging."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Wang Kun"}]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Security",
+    "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
+]
+dependencies = [
+    "starlette>=0.36.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+server = [
+    "uvicorn>=0.28.0",
+    "fastapi>=0.110.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "httpx>=0.27.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/wangkun5212-hue/mcp-guard"
+Issues = "https://github.com/wangkun5212-hue/mcp-guard/issues"
